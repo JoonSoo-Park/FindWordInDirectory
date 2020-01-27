@@ -64,11 +64,18 @@ int List::read_file()
 int List::find_file(istream& is)
 {
 	string input;
+	
+	cout << "Enter word to find(to quit, enter \"exit..\" to exit): ";
 	is >> input;
+
+	if (!input.compare("exit.."))
+		return 0;
 
 	for (files_sz i = 0; i != files.size(); ++i) {
 		files[i].find_in_file(input);
 	}
+
+	return 1;
 }
 
 void List::print() const 

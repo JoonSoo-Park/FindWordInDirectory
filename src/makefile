@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-w -std=c++17
 LDLIBS=-lstdc++fs
-OBJS=main.o List.o File.o extension.o
+OBJS=main.o Handle.o List.o File.o extension.o
 TARGET=main
 
 $(TARGET): $(OBJS)
@@ -9,6 +9,9 @@ $(TARGET): $(OBJS)
 
 main.o:			main.cpp List.h
 	g++ -c -o main.o main.cpp
+
+Handle.o:		Handle.cpp List.h
+	g++ -c -o Handle.o Handle.cpp
 
 List.o:			List.cpp extension.h
 	g++ -c -o List.o List.cpp
