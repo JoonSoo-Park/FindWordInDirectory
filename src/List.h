@@ -7,12 +7,15 @@
 #include "./File.h"
 
 class List {
+		typedef std::vector<std::string>::size_type svec_sz;
+		typedef std::vector<File>::size_type files_sz;
 	public:
 		explicit List(std::istream& is);
 
 		int Initialize();
 		std::istream& read(std::istream&);
 		int read_file();
+		int find_file(std::istream&);
 
 		void print() const;
 
@@ -22,9 +25,6 @@ class List {
 		std::vector<std::string> files_name;
 		std::vector<File> files;
 		int dir_select;
-
-		typedef std::vector<File>::size_type file_size;
-		typedef std::vector<std::string>::size_type svec_sz;
 };
 
 #endif

@@ -7,5 +7,5 @@ int main()
 {
 	List list(cin);
 
-	list.print();
+	list.find_file(cin);
 }

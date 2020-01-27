@@ -61,6 +61,16 @@ int List::read_file()
 	}
 }
 
+int List::find_file(istream& is)
+{
+	string input;
+	is >> input;
+
+	for (files_sz i = 0; i != files.size(); ++i) {
+		files[i].find_in_file(input);
+	}
+}
+
 void List::print() const 
 {
 	for (auto& a : files_name)
